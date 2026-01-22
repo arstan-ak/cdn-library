@@ -9,6 +9,10 @@ function anotherFunction() {
     return "This is another function.";
 }
 
+export function sayHelloBro(){
+    console.log('Hello bro')
+}
+
 // Expose functions to the global window object
 window.myLibrary = {
     log: myLibraryFunction,

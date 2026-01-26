@@ -1,3 +1,50 @@
 {
-  "files": ["index.ts"]
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    // "outDir": "./dist",
+
+    // Environment Settings - CHANGED FOR WEB
+    // See also https://aka.ms/tsconfig/module
+    "module": "esnext",              // Changed from "nodenext" to "esnext" for browsers
+    "target": "es2020",              // Changed to es2020 for broad browser support
+    "lib": ["es2020", "dom"],        // Added: DOM APIs + modern JS features
+    "types": [],                     // Keep empty or add specific types you need
+    
+    // Module Resolution - ADDED FOR WEB
+    "moduleResolution": "bundler",   // For modern bundlers (Vite, Webpack, etc.)
+    // OR use "node" if using older tools
+    
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",              // Keep if using React, remove if vanilla JS
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    
+    // Web-specific - OPTIONAL BUT HELPFUL
+    "esModuleInterop": true,         // Better interop with CommonJS modules
+    "allowSyntheticDefaultImports": true,  // Allow default imports from modules
+    "resolveJsonModule": true        // If you import JSON files
+  }
 }

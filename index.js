@@ -141,4 +141,10 @@ export class FinikWebClient {
         return isValid;
     }
 }
+// Expose to window for CDN usage
+if (typeof window !== 'undefined') {
+    window.FinikClient = FinikWebClient;
+}
+// Also export for module usage
+export default FinikWebClient;
 //# sourceMappingURL=index.js.map

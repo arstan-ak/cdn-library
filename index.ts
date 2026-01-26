@@ -216,3 +216,17 @@ export class FinikWebClient {
   }
 }
 
+// Extend Window interface for TypeScript
+declare global {
+  interface Window {
+    FinikClient: typeof FinikWebClient;
+  }
+}
+
+// Expose to window for CDN usage
+if (typeof window !== 'undefined') {
+  window.FinikClient = FinikWebClient;
+}
+
+// Also export for module usage
+export default FinikWebClient;
